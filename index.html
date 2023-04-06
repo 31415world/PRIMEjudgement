@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head prefix="og:http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>PRIME judgment</title>
+    <link rel="icon" href="https://prime.3.1415.world/images/icon.png" sizes="16x16" type="image/png">
+    <meta property="og:url" content="https://prime.3.1415.world/">
+    <meta property="og:title" content="PRIME judgment">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="素数をジャッチメント！">
+    <meta property="og:site_name" content="PRIME judgment">
+    <meta property="og:image" content="https://prime.3.1415.world/images/ogp.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="style/style.css">
+    <script async defer data-website-id="3f2e51b9-8e0c-4137-8ae7-5d50516fffa5" src="https://umami.pocopota.com/umami.js"></script>
+</head>
+
+<body>
+    <main id="first">
+        <section id="top">
+            <div id="title">PRIME judgment</div>
+            <div id="sub-title">素数か合成数かを瞬時にジャッチメント！</div>
+        </section>
+        <section id="start">
+            <div id="level">
+                <label id="level1"><input type="radio" name="levelSelect" value="level1" checked>Easy</label>
+                <label id="level2"><input type="radio" name="levelSelect" value="level2">Basic</label>
+                <label id="level3"><input type="radio" name="levelSelect" value="level3">Hard</label>
+                <label id="level4"><input type="radio" name="levelSelect" value="level4">VeryHard</label>
+                <label id="level5"><input type="radio" name="levelSelect" value="level5">Expert</label>
+                <label id="level6"><input type="radio" name="levelSelect" value="level6">Unknown</label> 
+            </div>
+            <div id="start-btn" onclick="start()">START</div>
+        </section>
+        <section id="description">
+            <h2>素数とは</h2>
+            <p>素数(Prime number)とは自然数(1,2,3,4,...)のうち、1とその数の他に約数を持たない数のことである。(例えば2,3,5など)。</br>また合成数(Composite number)とは自然数のうち、1とその数の他にも約数を持つ数である。</p>
+            <h2>PRIME judgmentとは</h2>
+            <p>そしてこのゲームではランダムな自然数が与えられるので、それが素数なのか合成数なのかを瞬時に判断し、その正答率と時間を競うゲームです。問題は20問です。</p>
+            <h2>操作方法</h2>
+            <p>数字が表示されるので、それが素数ならば素数のボタンを、合成数なら合成数のボタンを押します。パソコンの場合キーボードキーでも操作できます。</p>
+            <h2>レベル</h2>
+            <p>レベルによって出題される数の範囲が異なります。</p>
+            <ul>
+                <li>Easy : 2～100までの偶数を含む数</li>
+                <li>Basic : 2～100までの奇数</li>
+                <li>Hard : 100～300までの奇数</li>
+                <li>VeryHard : 300～1000までの奇数</li>
+                <li>Expert : 4桁の奇数</li>
+                <li>Unknown : ???</li>
+            </ul>
+        </section>
+    </main>
+    <main id="play">
+        <section id="display">
+            <div id="question"></div>
+            <div id="number"></div>
+        </section>
+        <section id="info">
+            <ul>
+                <li>問題：<span id="q-count">0問目/20問</span></li>
+                <li>正答率：<span id="corrent-count">0問/0問</li>
+                <li>タイム：<span id="time-display">00:00.000</span></li>
+                <li><div id="escape-btn" onclick="escape()">やめる</div></li>
+            </ul>
+        </section>
+        <section id="answer-btn">
+            <div id="prime" onclick="selectTrue()">素数<span>←</span></div>
+            <div id="composite" onclick="selectFalse()">合成数<span>→</span></div>
+        </section>
+    </main>
+    <main id="result">
+        <section id="result-display">
+            <div id="result-title">Result<div id="result-level"></div></div>
+            <div id="score"></div>
+            <div id="result-info">
+                <div id="rate">正答率<span id="rate-inner"></span></div>
+                <div id="time">時間<span id="time-inner"></span></div>
+            </div>
+        </section>
+        <section id="details">
+            <div id="right-wrong">
+                <table>
+                    <tr id="list-q-1"></tr>
+                    <tr id="list-kinds-1"></tr>
+                    <tr id="list-rw-1"></tr>
+                </table>
+                <table>
+                    <tr id="list-q-2"></tr>
+                    <tr id="list-kinds-2"></tr>
+                    <tr id="list-rw-2"></tr>
+                </table>
+            </div>
+            <div id="links">
+                <div class="link" onclick="reload()">もう一度</div>
+                <div class="link"><a id="twitter-btn" target="_blank">ツイート</a></div>
+                <div class="link" onclick="copy()">結果をコピー<span id="copy-checker"></span></div>
+            </div>
+        </section>
+        <section id="look-back"></section>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="https://github.com/31415world">GitHub</a></li>
+            <li>©3.1415.world, ddrks</li>
+        </ul>
+    </footer>
+    <script src="script/script.js"></script>
+</body>
+</html>
