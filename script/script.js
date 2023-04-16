@@ -89,7 +89,7 @@ function generate(level) {
     var add_nums = [];
     var add_num_count = 20 - p_num;
     for (var k = 0; k < add_num_count; k++) {
-        var add_num = Math.floor(Math.random() * (max + 1 - min)) + min;
+        var add_num = Math.floor(Math.random() * (max - min)) + min;
         // レベルがeasy以外かつ偶数なら+1
         if (level != 'level1' && add_num % 2 == 0) {
             add_num += 1;
