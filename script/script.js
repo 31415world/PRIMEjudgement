@@ -5,7 +5,8 @@ q_count = 0;
 correct_a = 0;
 incorrect_a = 0;
 rightORwrong = [];
-level = 'level1';
+level = localStorage.getItem('level')!= null ? localStorage.getItem('level') : 'level1';
+document.getElementById(level).firstElementChild.checked = true;
 document.getElementById('answer-btn').style.pointerEvents = 'none'; // クリック無効化
 
 // 素数判定
@@ -34,7 +35,6 @@ function generate(level) {
     var p_num = 0;
     for (var i = 0; i < q; i++) {
         var r_1 = Math.floor(Math.random() * 2);
-        console.log(r_1);
         if (r_1 == 1) {
             p_num += 1;
         }
@@ -121,13 +121,15 @@ function start() {
     }
     level = checked_level;
 
+    // 設定難易度をlocalStrageに保存
+    localStorage.setItem('level', level);
+
     // 画面遷移
     document.getElementById('first').style.display = 'none';
     document.getElementById('play').style.display = 'block';
 
     // 問題作成
     q_nums = generate(level);
-    console.log(q_nums);
 
     // パス！
     ready();
